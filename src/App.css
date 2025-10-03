@@ -683,6 +683,7 @@
   text-align: left;
   font-family: inherit;
   position: relative;
+  padding-right: 48px;
 }
 
 .sidebar-link:hover {
@@ -699,6 +700,10 @@
   opacity: 0;
   transition: opacity 0.2s ease;
   color: #000000;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .sidebar-link:hover .sidebar-chevron {
