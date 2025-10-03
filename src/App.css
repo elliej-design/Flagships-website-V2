@@ -293,6 +293,152 @@
   }
 }
 
+/* Article Page Styles */
+.article-page {
+  padding: 2rem 0;
+  background: transparent;
+  margin-left: 192px;
+  min-height: 100vh;
+}
+
+.article-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.article-content {
+  background: transparent;
+}
+
+.article-header {
+  margin-bottom: 3rem;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+}
+
+.article-category {
+  background: rgba(0, 0, 0, 0.1);
+  color: #000000;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+}
+
+.article-date {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.article-read-time {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.article-title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.2;
+  margin: 0 0 1.5rem 0;
+}
+
+.article-summary {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+}
+
+.article-author {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 500;
+}
+
+.article-image {
+  margin-bottom: 3rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.article-hero-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.article-body {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #000000;
+}
+
+.article-body h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #000000;
+  margin: 3rem 0 1.5rem 0;
+  line-height: 1.3;
+}
+
+.article-body h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+  margin: 2rem 0 1rem 0;
+  line-height: 1.4;
+}
+
+.article-body p {
+  margin: 0 0 1.5rem 0;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive styles for article page */
+@media (max-width: 768px) {
+  .article-page {
+    margin-left: 0;
+    padding: 1rem 0;
+  }
+  
+  .article-container {
+    padding: 0 16px;
+  }
+  
+  .article-title {
+    font-size: 32px;
+  }
+  
+  .article-summary {
+    font-size: 18px;
+  }
+  
+  .article-hero-image {
+    height: 250px;
+  }
+  
+  .article-body {
+    font-size: 16px;
+  }
+  
+  .article-body h2 {
+    font-size: 24px;
+  }
+  
+  .article-body h3 {
+    font-size: 20px;
+  }
+}
+
 /* Research Section Styles */
 .research-section {
   padding: 4rem 0;
@@ -529,6 +675,11 @@
   line-height: 16px;
   width: 100%;
   transition: background-color 0.2s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
 }
 
 .sidebar-link:hover {
@@ -596,6 +747,20 @@
 }
 
 .news-card:hover {
+  transform: translateY(-2px);
+}
+
+.news-card-clickable {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  padding: 0;
+  width: 100%;
+}
+
+.news-card-clickable:hover {
   transform: translateY(-2px);
 }
 

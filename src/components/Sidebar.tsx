@@ -1,12 +1,23 @@
 import React from 'react';
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  onNavigate?: (page: string) => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ onNavigate }) => {
   const menuItems = [
+    'Home',
     'News',
     'Dictionary',
     'Contact',
     'Security'
   ];
+
+  const handleItemClick = (item: string) => {
+    if (onNavigate) {
+      onNavigate(item.toLowerCase());
+    }
+  };
 
   return (
     <div className="sidebar sidebar-visible">
@@ -14,9 +25,12 @@ const Sidebar: React.FC = () => {
         <div className="sidebar-list">
           {menuItems.map((item, index) => (
             <div key={index} className="sidebar-item">
-              <a href="#" className="sidebar-link">
+              <button 
+                className="sidebar-link"
+                onClick={() => handleItemClick(item)}
+              >
                 {item}
-              </a>
+              </button>
             </div>
           ))}
         </div>

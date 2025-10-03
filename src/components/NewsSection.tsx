@@ -8,7 +8,11 @@ interface NewsArticle {
   imageUrl: string;
 }
 
-const NewsSection: React.FC = () => {
+interface NewsSectionProps {
+  onNavigate?: (page: string) => void;
+}
+
+const NewsSection: React.FC<NewsSectionProps> = ({ onNavigate }) => {
   const newsArticles: NewsArticle[] = [
     {
       id: 1,
@@ -63,25 +67,55 @@ const NewsSection: React.FC = () => {
         </div>
         
         <div className="news-grid">
-          {newsArticles.map((article) => (
-            <article key={article.id} className="news-card">
-              <div className="news-card-image">
-                <div className="news-image-overlay"></div>
-                <img 
-                  src={article.imageUrl} 
-                  alt={article.title}
-                  className="news-image"
-                />
-              </div>
-              <div className="news-card-content">
-                <h3 className="news-card-title">{article.title}</h3>
-                <div className="news-card-meta">
-                  <span className="news-category">{article.category}</span>
-                  <span className="news-date">{article.date}</span>
+          {newsArticles.map((article) => {
+            const isFirstArticle = article.id === 1;
+            
+            if (isFirstArticle) {
+              return (
+                <button 
+                  key={article.id} 
+                  className="news-card news-card-clickable"
+                  onClick={() => onNavigate && onNavigate('article')}
+                >
+                  <div className="news-card-image">
+                    <div className="news-image-overlay"></div>
+                    <img 
+                      src={article.imageUrl} 
+                      alt={article.title}
+                      className="news-image"
+                    />
+                  </div>
+                  <div className="news-card-content">
+                    <h3 className="news-card-title">{article.title}</h3>
+                    <div className="news-card-meta">
+                      <span className="news-category">{article.category}</span>
+                      <span className="news-date">{article.date}</span>
+                    </div>
+                  </div>
+                </button>
+              );
+            }
+            
+            return (
+              <article key={article.id} className="news-card">
+                <div className="news-card-image">
+                  <div className="news-image-overlay"></div>
+                  <img 
+                    src={article.imageUrl} 
+                    alt={article.title}
+                    className="news-image"
+                  />
                 </div>
-              </div>
-            </article>
-          ))}
+                <div className="news-card-content">
+                  <h3 className="news-card-title">{article.title}</h3>
+                  <div className="news-card-meta">
+                    <span className="news-category">{article.category}</span>
+                    <span className="news-date">{article.date}</span>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
