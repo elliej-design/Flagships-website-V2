@@ -1,4 +1,5 @@
 import React from 'react';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 interface SidebarProps {
   onNavigate?: (page: string) => void;
@@ -29,7 +30,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onNavigate }) => {
                 className="sidebar-link"
                 onClick={() => handleItemClick(item)}
               >
-                {item}
+                <span className="sidebar-link-text">{item}</span>
+                <ChevronRightIcon className="sidebar-chevron" />
               </button>
             </div>
           ))}
