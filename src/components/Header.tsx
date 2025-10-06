@@ -7,10 +7,10 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="header">
+    <header className="header animate-fade-in">
       <div className="header-container">
         <div className="header-spacer"></div>
-        <button className="login-button" onClick={handleLogin}>
+        <button className="login-button animate-fade-in-up animate-delay-1" onClick={handleLogin}>
           Login
         </button>
       </div>

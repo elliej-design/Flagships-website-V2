@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { client, queries, urlFor, SanityArticle } from '../sanityClient';
 
-interface NewsSectionProps {
+interface NewsPageProps {
   onNavigate?: (page: string, slug?: string) => void;
 }
 
-const NewsSection: React.FC<NewsSectionProps> = ({ onNavigate }) => {
+const NewsPage: React.FC<NewsPageProps> = ({ onNavigate }) => {
   const [articles, setArticles] = useState<SanityArticle[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        // Fetch exactly 6 articles
-        const data = await client.fetch(queries.latestArticles(6));
+        const data = await client.fetch(queries.allArticles);
         setArticles(data);
       } catch (error) {
         console.error('Error fetching articles:', error);
@@ -38,7 +37,7 @@ const NewsSection: React.FC<NewsSectionProps> = ({ onNavigate }) => {
     if (article.mainImage) {
       return urlFor(article.mainImage).width(800).height(600).url();
     }
-    return '/news-default-2.jpg'; // Fallback image
+    return '/news-default-2.jpg';
   };
 
   const getCategoryTitle = (categories: SanityArticle['categories']): string | undefined => {
@@ -52,46 +51,42 @@ const NewsSection: React.FC<NewsSectionProps> = ({ onNavigate }) => {
     }
   };
 
+  const getAuthorName = (author: SanityArticle['author']): string | undefined => {
+    if (!author) return undefined;
+    
+    if (typeof author === 'string') {
+      return author;
+    } else {
+      return author.name;
+    }
+  };
+
   if (loading) {
     return (
-      <section className="news-section animate-fade-in-up animate-delay-5">
+      <div className="news-page">
         <div className="news-container">
-          <div className="news-header">
-            <h2 className="news-title">Latest news</h2>
-          </div>
-          <div className="news-grid">
-            <p>Loading articles...</p>
-          </div>
+          <h1 className="page-title">All News</h1>
+          <p>Loading articles...</p>
         </div>
-      </section>
+      </div>
     );
   }
 
   return (
-    <section className="news-section animate-fade-in-up animate-delay-5">
+    <div className="news-page">
       <div className="news-container">
-        <div className="news-header">
-          <h2 className="news-title animate-fade-in-up animate-delay-1">Latest news</h2>
-          <a 
-            href="#" 
-            className="news-view-all animate-fade-in animate-delay-2"
-            onClick={(e) => {
-              e.preventDefault();
-              onNavigate && onNavigate('news');
-            }}
-          >
-            View all
-          </a>
+        <div className="news-page-header">
+          <h1 className="page-title">All News</h1>
         </div>
-        
+
         <div className="news-grid">
-          {articles.map((article, index) => {
+          {articles.map((article) => {
             const categoryTitle = getCategoryTitle(article.categories);
             
             return (
               <button 
                 key={article._id} 
-                className={`news-card news-card-clickable animate-fade-in-up animate-delay-${index + 3}`}
+                className="news-card news-card-clickable"
                 onClick={() => onNavigate && onNavigate('article', article.slug.current)}
               >
                 <div className="news-card-image">
@@ -116,8 +111,8 @@ const NewsSection: React.FC<NewsSectionProps> = ({ onNavigate }) => {
           })}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default NewsSection;
+export default NewsPage;

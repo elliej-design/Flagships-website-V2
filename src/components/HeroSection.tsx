@@ -18,18 +18,22 @@ const HeroSection: React.FC = () => {
     <section className="hero-section">
       <div className="hero-container">
         <div className="hero-content">
-          <Logo />
-          <h1 className="hero-tagline">
+          <div className="animate-fade-in-up animate-delay-1">
+            <Logo />
+          </div>
+          <h1 className="hero-tagline animate-fade-in-up animate-delay-2">
             The new infrastructure for private market communication
           </h1>
         </div>
         
-        <div className="hero-search">
+        <div className="hero-search animate-fade-in-up animate-delay-3">
           <SearchInput 
             placeholder="Example question"
             onSearch={handleSearch}
           />
-          <ExampleQuestions onQuestionClick={handleQuestionClick} />
+          <div className="animate-fade-in-up animate-delay-4">
+            <ExampleQuestions onQuestionClick={handleQuestionClick} />
+          </div>
         </div>
       </div>
     </section>
