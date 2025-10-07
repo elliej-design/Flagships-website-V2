@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { client, queries, urlFor, SanityArticle } from '../sanityClient';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 interface NewsSectionProps {
   onNavigate?: (page: string, slug?: string) => void;
@@ -72,16 +73,13 @@ const NewsSection: React.FC<NewsSectionProps> = ({ onNavigate }) => {
       <div className="news-container">
         <div className="news-header">
           <h2 className="news-title animate-fade-in-up animate-delay-1">Latest news</h2>
-          <a 
-            href="#" 
-            className="news-view-all animate-fade-in animate-delay-2"
-            onClick={(e) => {
-              e.preventDefault();
-              onNavigate && onNavigate('news');
-            }}
+          <button 
+            className="view-all-link animate-fade-in animate-delay-2"
+            onClick={() => onNavigate && onNavigate('news')}
           >
-            View all
-          </a>
+            <span className="view-all-text">View all</span>
+            <ArrowForwardIcon className="view-all-arrow" />
+          </button>
         </div>
         
         <div className="news-grid">

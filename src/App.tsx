@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import ArticlePage from './pages/Articlepage'
 import NewsPage from './pages/NewsPage'
+import SecurityPage from './pages/SecurityPage'
+import DictionaryPage from './pages/DictionaryPage'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import NewsSection from './components/NewsSection'
@@ -17,6 +19,8 @@ function App() {
     if (slug) {
       setCurrentSlug(slug)
     }
+    // Scroll to top when navigating to a new page
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   // Home page
@@ -27,7 +31,7 @@ function App() {
         <Sidebar onNavigate={handleNavigation} currentPage={currentPage} />
         <HeroSection />
         <NewsSection onNavigate={handleNavigation} />
-        <ResearchSection />
+        <ResearchSection onNavigate={handleNavigation} />
       </div>
     )
   }
@@ -54,6 +58,28 @@ function App() {
     )
   }
 
+  // Security page
+  if (currentPage === 'security') {
+    return (
+      <div className="app">
+        <Header />
+        <Sidebar onNavigate={handleNavigation} currentPage={currentPage} />
+        <SecurityPage onNavigate={handleNavigation} />
+      </div>
+    )
+  }
+
+  // Dictionary page
+  if (currentPage === 'dictionary') {
+    return (
+      <div className="app">
+        <Header />
+        <Sidebar onNavigate={handleNavigation} currentPage={currentPage} />
+        <DictionaryPage onNavigate={handleNavigation} />
+      </div>
+    )
+  }
+
   // Fallback to home
   return (
     <div className="app">
@@ -61,7 +87,7 @@ function App() {
       <Sidebar onNavigate={handleNavigation} currentPage="home" />
       <HeroSection />
       <NewsSection onNavigate={handleNavigation} />
-      <ResearchSection />
+      <ResearchSection onNavigate={handleNavigation} />
     </div>
   )
 }
