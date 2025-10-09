@@ -15,12 +15,16 @@ const SearchInput: React.FC<SearchInputProps> = ({
   const [isAnimating, setIsAnimating] = useState(false);
 
   const placeholderTexts = [
-    "What is Flagships?",
-    "How does private market communication work?",
-    "What are the key features?",
-    "How to get started?",
-    "What are the benefits?",
-    "How does it compare to competitors?"
+    "What's driving the shift in private markets right now?",
+    "How are retail investors beginning to access alternatives?",
+    "What are new fund structures doing to make private markets more accessible?",
+    "Are new investment platforms changing the game for everyday investors?",
+    "What role do regulators play in expanding access?",
+    "Are private markets too risky for retirement portfolios?",
+    "How are large asset managers adapting to this trend?",
+    "What's happening in Europe with access to alternatives?",
+    "Why is data and transparency such a big issue in private markets?",
+    "How does Flagships connect to all of this?"
   ];
 
   useEffect(() => {
