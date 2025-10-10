@@ -40,17 +40,10 @@ const SearchInput: React.FC<SearchInputProps> = ({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // If there's a query, use the search functionality
-    if (query.trim()) {
-      if (onSearch) {
-        onSearch(query.trim());
-      }
-    } else {
-      // If no query, show the answer for the current question
-      const currentQuestionAnswer = questionAnswers[placeholderIndex];
-      if (onShowAnswer && currentQuestionAnswer) {
-        onShowAnswer(currentQuestionAnswer);
-      }
+    // Since input is read-only, always show the answer for the current question
+    const currentQuestionAnswer = questionAnswers[placeholderIndex];
+    if (onShowAnswer && currentQuestionAnswer) {
+      onShowAnswer(currentQuestionAnswer);
     }
   };
 
@@ -64,6 +57,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="search-input"
+            readOnly
           />
           <div className={`placeholder-text ${isAnimating ? 'animating' : ''}`}>
             {currentPlaceholder}
