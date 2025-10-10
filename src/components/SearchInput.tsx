@@ -1,31 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { questionAnswers, QuestionAnswer } from '../data/questionAnswers';
 
 interface SearchInputProps {
   placeholder?: string;
   onSearch?: (query: string) => void;
+  onShowAnswer?: (answer: QuestionAnswer) => void;
 }
 
 const SearchInput: React.FC<SearchInputProps> = ({ 
   placeholder = "Example question", 
-  onSearch 
+  onSearch,
+  onShowAnswer
 }) => {
   const [query, setQuery] = useState('');
   const [currentPlaceholder, setCurrentPlaceholder] = useState('');
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const placeholderTexts = [
-    "What's driving the shift in private markets right now?",
-    "How are retail investors beginning to access alternatives?",
-    "What are new fund structures doing to make private markets more accessible?",
-    "Are new investment platforms changing the game for everyday investors?",
-    "What role do regulators play in expanding access?",
-    "Are private markets too risky for retirement portfolios?",
-    "How are large asset managers adapting to this trend?",
-    "What's happening in Europe with access to alternatives?",
-    "Why is data and transparency such a big issue in private markets?",
-    "How does Flagships connect to all of this?"
-  ];
+  const placeholderTexts = questionAnswers.map(qa => qa.question);
 
   useEffect(() => {
     setCurrentPlaceholder(placeholderTexts[0]);
@@ -47,8 +39,18 @@ const SearchInput: React.FC<SearchInputProps> = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (onSearch && query.trim()) {
-      onSearch(query.trim());
+    
+    // If there's a query, use the search functionality
+    if (query.trim()) {
+      if (onSearch) {
+        onSearch(query.trim());
+      }
+    } else {
+      // If no query, show the answer for the current question
+      const currentQuestionAnswer = questionAnswers[placeholderIndex];
+      if (onShowAnswer && currentQuestionAnswer) {
+        onShowAnswer(currentQuestionAnswer);
+      }
     }
   };
 
