@@ -7,7 +7,6 @@ import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import NewsSection from './components/NewsSection'
 import ResearchSection from './components/ResearchSection'
-import Sidebar from './components/Sidebar'
 import './App.css'
 
 function App() {
@@ -27,8 +26,7 @@ function App() {
   if (currentPage === 'home') {
     return (
       <div className="app">
-        <Header />
-        <Sidebar onNavigate={handleNavigation} currentPage={currentPage} />
+        <Header onNavigate={handleNavigation} currentPage={currentPage} />
         <HeroSection />
         <NewsSection onNavigate={handleNavigation} />
         <ResearchSection onNavigate={handleNavigation} />
@@ -40,8 +38,7 @@ function App() {
   if (currentPage === 'news') {
     return (
       <div className="app">
-        <Header />
-        <Sidebar onNavigate={handleNavigation} currentPage={currentPage} />
+        <Header onNavigate={handleNavigation} currentPage={currentPage} />
         <NewsPage onNavigate={handleNavigation} />
       </div>
     )
@@ -51,8 +48,7 @@ function App() {
   if (currentPage === 'article') {
     return (
       <div className="app">
-        <Header />
-        <Sidebar onNavigate={handleNavigation} currentPage={currentPage} />
+        <Header onNavigate={handleNavigation} currentPage={currentPage} />
         <ArticlePage slug={currentSlug} onNavigate={handleNavigation} />
       </div>
     )
@@ -62,8 +58,7 @@ function App() {
   if (currentPage === 'security') {
     return (
       <div className="app">
-        <Header />
-        <Sidebar onNavigate={handleNavigation} currentPage={currentPage} />
+        <Header onNavigate={handleNavigation} currentPage={currentPage} />
         <SecurityPage onNavigate={handleNavigation} />
       </div>
     )
@@ -73,8 +68,7 @@ function App() {
   if (currentPage === 'dictionary') {
     return (
       <div className="app">
-        <Header />
-        <Sidebar onNavigate={handleNavigation} currentPage={currentPage} />
+        <Header onNavigate={handleNavigation} currentPage={currentPage} />
         <DictionaryPage onNavigate={handleNavigation} />
       </div>
     )
@@ -83,8 +77,7 @@ function App() {
   // Fallback to home
   return (
     <div className="app">
-      <Header />
-      <Sidebar onNavigate={handleNavigation} currentPage="home" />
+      <Header onNavigate={handleNavigation} currentPage="home" />
       <HeroSection />
       <NewsSection onNavigate={handleNavigation} />
       <ResearchSection onNavigate={handleNavigation} />
