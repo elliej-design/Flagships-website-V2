@@ -120,8 +120,8 @@
 }
 
 .logo-svg {
-  width: 503px;
-  height: 119px;
+  width: 400px;
+  height: 95px;
   max-width: 100%;
   background-image: url('/Logomark - White - New.svg');
   background-size: contain;
@@ -134,7 +134,7 @@
 }
 
 .hero-tagline {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.2;
   color: rgba(0, 0, 0, 0.7);
@@ -1535,11 +1535,11 @@
   }
   
   .hero-tagline {
-    font-size: 28px;
+    font-size: 22px;
   }
   
   .logo-svg {
-    width: 350px;
+    width: 280px;
     height: auto;
   }
   
