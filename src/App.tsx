@@ -3,6 +3,7 @@ import ArticlePage from './pages/Articlepage'
 import NewsPage from './pages/NewsPage'
 import SecurityPage from './pages/SecurityPage'
 import DictionaryPage from './pages/DictionaryPage'
+import ContactPage from './pages/ContactPage'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import NewsSection from './components/NewsSection'
@@ -70,6 +71,16 @@ function App() {
       <div className="app">
         <Header onNavigate={handleNavigation} currentPage={currentPage} />
         <DictionaryPage onNavigate={handleNavigation} />
+      </div>
+    )
+  }
+
+  // Contact page
+  if (currentPage === 'contact') {
+    return (
+      <div className="app">
+        <Header onNavigate={handleNavigation} currentPage={currentPage} />
+        <ContactPage />
       </div>
     )
   }

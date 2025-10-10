@@ -402,6 +402,85 @@
   }
 }
 
+/* Contact Page Styles */
+.contact-page {
+  position: fixed;
+  top: 0;
+  left: 192px;
+  right: 192px;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.06) 1px, transparent 0);
+  background-size: 32px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container {
+  max-width: 600px;
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-content {
+  /* Removed modal/box styling */
+}
+
+.contact-section {
+  margin-bottom: 0;
+}
+
+.contact-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #666666;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.contact-email {
+  font-size: 32px;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.contact-email:hover {
+  color: #666666;
+}
+
+/* Responsive styles for contact page */
+@media (max-width: 768px) {
+  .contact-page {
+    left: 0;
+    right: 0;
+  }
+  
+  .contact-container {
+    padding: 0 1rem;
+    width: 100%;
+  }
+  
+  .contact-subtitle {
+    font-size: 18px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-email {
+    font-size: 24px;
+  }
+}
+
 /* Header Styles */
 .header {
   background: transparent;
