@@ -1,0 +1,95 @@
+Term,Definition
+Ask Price,The lowest price a seller is willing to accept for a security.
+Auction Market,A market in which buyers enter competitive bids and sellers enter competitive offers simultaneously.
+Authorized Shares,The maximum number of shares a corporation is legally permitted to issue.
+Average Daily Trading Volume,The average number of shares traded per day over a specified period.
+Back Office,"The administrative area of a financial institution that supports trading, settlements, and record-keeping."
+Bank Rate,The interest rate at which a nation's central bank lends money to domestic banks.
+Basel Accords,A set of agreements by the Basel Committee on Banking Supervision providing recommendations on banking laws and regulations.
+Bid Price,The highest price a buyer is willing to pay for a security.
+Bid-Ask Spread,The difference between the bid price and the ask price of a security.
+Block Trade,"A large, privately negotiated securities transaction."
+Blue Chip Stock,"Shares of a nationally recognized, financially sound, and well-established company."
+Broker-Dealer,A firm in the business of buying and selling securities for its own account or on behalf of customers.
+Bullion,"Physical gold or silver in the form of bars, ingots, or coins."
+Callable Bond,A bond that can be redeemed by the issuer before its maturity date.
+Capital Adequacy Ratio (CAR),"A measure of a bank's capital, expressed as a percentage of its risk-weighted credit exposures."
+Central Bank,"The national institution that manages a country's currency, money supply, and interest rates."
+Clearing House,An intermediary between buyers and sellers of financial instruments that ensures the proper settlement of trades.
+Closing Price,The final price of a security at the end of a trading session.
+Commercial Bank,"A financial institution that accepts deposits, offers checking accounts, and makes loans."
+Convertible Bond,A bond that can be converted into a predetermined number of the issuing company's shares.
+Coupon Rate,"The annual interest rate paid on a bond, expressed as a percentage of its face value."
+Covered Call,An options strategy where an investor holds a long position in an asset and sells call options on that same asset.
+Custodian Bank,A financial institution responsible for safeguarding a firm's or individual's financial assets.
+Day Trading,The buying and selling of securities within the same trading day.
+Depository Receipt,A negotiable financial instrument representing a foreign company's publicly traded securities.
+Derivatives Market,"A market where financial instruments like futures, options, and swaps are traded."
+Discount Bond,A bond sold for less than its face value.
+Dow Jones Industrial Average (DJIA),An index of 30 major publicly traded companies in the U.S.
+Dual-Class Shares,Shares that give different voting rights and dividend payments to different classes of shareholders.
+Electronic Communication Network (ECN),A computerized system that facilitates trading of financial products outside traditional exchanges.
+Emerging Market,"An economy that is progressing toward becoming more advanced, often through rapid growth and industrialization."
+Eurobond,A bond issued in a currency not native to the country where it is issued.
+Exchange,"A marketplace where securities, commodities, derivatives, and other instruments are traded."
+Execution,The completion of a buy or sell order in the market.
+Federal Funds Rate,The interest rate at which U.S. banks lend balances to each other overnight.
+Financial Market,"A marketplace where buyers and sellers trade financial assets such as stocks, bonds, derivatives, and currencies."
+Forward Contract,A customized contract between two parties to buy or sell an asset at a specified future date for a price agreed upon today.
+Front Office,"The division of a financial institution responsible for sales, trading, and other revenue-generating activities."
+Gilt-Edged Security,High-grade bonds issued by certain national governments.
+Global Depositary Receipt (GDR),A bank certificate issued in more than one country for shares in a foreign company.
+Government Bond,A debt security issued by a government to support spending.
+High-Frequency Trading (HFT),A type of algorithmic trading that uses powerful computers to transact large numbers of orders at extremely high speeds.
+Hostile Takeover,An acquisition attempt by a company that is strongly resisted by the target company’s management.
+Initial Margin,The percentage of the purchase price of securities that an investor must pay for with their own cash or marginable securities.
+Interbank Market,The global network used by financial institutions to trade currencies among themselves.
+International Monetary Fund (IMF),An international organization established to promote global monetary cooperation and stability.
+Investment Bank,A financial institution that helps companies raise capital and provides advisory services on mergers and acquisitions.
+Issuer,"An entity that develops, registers, and sells securities to finance its operations."
+Junk Bond,"A high-yield, high-risk security typically issued by companies seeking to raise capital quickly."
+LIBOR,"The London Interbank Offered Rate, formerly the benchmark interest rate at which major global banks lent to one another."
+Limit Order,An order to buy or sell a security at a specified price or better.
+Liquidity Ratio,A measure of a company’s ability to pay off its short-term liabilities with its current assets.
+Listed Security,"A stock, bond, or other security that is traded on an organized exchange."
+Loan Syndication,The process of involving multiple lenders in funding portions of a loan for a single borrower.
+Long Position,The purchase of a security with the expectation that it will rise in value.
+Market Maker,"A firm or individual that actively quotes two-sided markets in a financial instrument, providing bids and offers."
+Market Order,An order to buy or sell a stock immediately at the best available price.
+Market Participant,Any individual or institution that is actively involved in buying or selling financial instruments.
+Market Risk,The possibility of an investor experiencing losses due to factors that affect the overall performance of the financial markets.
+Maturity Date,The date on which the principal amount of a bond or other debt instrument becomes due and payable.
+Merchant Bank,A financial institution that provides capital to companies in the form of share ownership.
+Money Supply,The total amount of money in circulation or in existence in an economy at a given time.
+NASDAQ,"A global electronic marketplace for buying and selling securities, as well as the benchmark index for U.S. technology stocks."
+Net Interest Margin (NIM),A performance metric that examines how successful a firm’s investment decisions are compared to its debt situations.
+NYSE,"The New York Stock Exchange, the world's largest equities-based exchange."
+Open Interest,"The total number of outstanding derivative contracts, such as options or futures, that have not been settled."
+Option Chain,A listing of all available option contracts for a given security.
+Overbought,"A condition in which the price of a security has risen too far, too fast, and is likely due for a correction."
+Oversold,"A condition in which the price of a security has fallen too far, too fast, and is likely due for a rebound."
+Penny Stock,"A stock that trades at a relatively low price, often outside of major market exchanges."
+Portfolio Manager,A person or team responsible for making investment decisions for a fund or client portfolio.
+Primary Market,The market where new securities are issued and sold to investors for the first time.
+Principal,The original amount of money borrowed in a loan or put into an investment.
+Quantitative Easing (QE),A monetary policy used by central banks to stimulate the economy by buying financial assets.
+Quotation,"The last price at which a security or commodity traded, or the most recent bid and ask prices."
+Repo (Repurchase Agreement),A form of short-term borrowing for dealers in government securities.
+Risk Management,"The identification, analysis, and mitigation of uncertainty in investment decisions."
+Secondary Market,A marketplace where investors buy and sell securities they already own.
+Securities and Exchange Commission (SEC),The U.S. federal agency that regulates the securities markets and protects investors.
+Settlement Date,The date on which a trade is finalized and securities are delivered to the buyer while cash is paid to the seller.
+Short Selling,"The sale of a security not owned by the seller, with the expectation it will decline in value."
+Spread,"The difference between two prices, rates, or yields."
+Stock Index,A measurement of the performance of a group of stocks that represent a particular market or sector.
+Stop Order,An order to buy or sell a security once its price reaches a specified level.
+Swaption,An option granting the right but not the obligation to enter into a swap agreement by a specified date.
+Systemic Risk,The risk of collapse of an entire financial system or entire market.
+Ticker Symbol,An abbreviation used to uniquely identify publicly traded shares of a particular stock.
+Trade Settlement,The process of transferring securities to the buyer and payment to the seller after a trade has been executed.
+Treasury Note,A marketable U.S. government debt security with a fixed interest rate and maturity between one and ten years.
+Underwriting,The process by which an investment bank raises investment capital from investors on behalf of corporations and governments issuing securities.
+Volcker Rule,A federal regulation that restricts U.S. banks from making certain types of speculative investments.
+Volume,The number of shares or contracts traded in a security or market during a given period.
+Yield Curve,A line that plots interest rates of bonds having equal credit quality but differing maturity dates.
+Zombie Bank,A bank with an economic net worth less than zero that continues to operate due to government support.

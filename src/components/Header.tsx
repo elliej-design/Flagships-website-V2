@@ -52,9 +52,22 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
     };
   }, [isDropdownOpen]);
 
+  const handleLogoClick = () => {
+    if (onNavigate) {
+      onNavigate('home');
+    }
+  };
+
   return (
     <header className="header animate-fade-in">
       <div className="header-container">
+        <button className="header-logo" onClick={handleLogoClick}>
+          <img 
+            src="/Logo - Black - new.svg" 
+            alt="Flagships" 
+            className="logo-image"
+          />
+        </button>
         <div className="header-spacer"></div>
         <div className="header-menu">
           <div className="dropdown-container" ref={dropdownRef}>
