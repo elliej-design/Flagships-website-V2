@@ -955,20 +955,20 @@
 }
 
 .alphabet-letter.available {
-  color: #0071e3;
-  border-color: #0071e3;
+  color: #000000;
+  border-color: #000000;
 }
 
 .alphabet-letter.available:hover {
-  background: #0071e3;
+  background: #000000;
   color: #ffffff;
   transform: translateY(-1px);
 }
 
 .alphabet-letter.active {
-  background: #0071e3;
+  background: #000000;
   color: #ffffff;
-  border-color: #0071e3;
+  border-color: #000000;
 }
 
 .alphabet-letter.unavailable {
@@ -984,13 +984,13 @@
   align-items: center;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #0071e3;
+  border-bottom: 2px solid #000000;
 }
 
 .letter-title {
   font-size: 32px;
   font-weight: 600;
-  color: #0071e3;
+  color: #000000;
   margin: 0;
 }
 
