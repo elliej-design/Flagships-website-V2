@@ -7,6 +7,7 @@ interface DictionaryPageProps {
 
 const DictionaryPage: React.FC<DictionaryPageProps> = ({ onNavigate }) => {
   const [selectedLetter, setSelectedLetter] = useState<string>('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
 
   const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
@@ -24,11 +25,27 @@ const DictionaryPage: React.FC<DictionaryPageProps> = ({ onNavigate }) => {
 
   const handleLetterClick = (letter: string) => {
     setSelectedLetter(selectedLetter === letter ? '' : letter);
+    setSearchQuery(''); // Clear search when selecting a letter
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setSelectedLetter(''); // Clear letter selection when searching
+  };
+
+  const getFilteredTerms = () => {
+    if (searchQuery.trim()) {
+      return dictionaryTerms.filter(term => 
+        term.term.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        term.definition.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+    return selectedLetter ? getTermsByLetter(selectedLetter) : dictionaryTerms;
   };
 
 
   const availableLetters = getAvailableLetters();
-  const filteredTerms = selectedLetter ? getTermsByLetter(selectedLetter) : dictionaryTerms;
+  const filteredTerms = getFilteredTerms();
 
   return (
     <div className="dictionary-page">
@@ -54,6 +71,17 @@ const DictionaryPage: React.FC<DictionaryPageProps> = ({ onNavigate }) => {
                 </button>
               ))}
             </div>
+          </div>
+
+          {/* Search Input */}
+          <div className="dictionary-search">
+            <input
+              type="text"
+              placeholder="Search terms or definitions..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="dictionary-search-input"
+            />
           </div>
 
           {/* Terms Section */}
