@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { questionAnswers, QuestionAnswer } from '../data/questionAnswers';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 interface SearchInputProps {
   placeholder?: string;
@@ -23,6 +24,9 @@ const SearchInput: React.FC<SearchInputProps> = ({
   }, []);
 
   useEffect(() => {
+    // Don't animate when answer is visible
+    if (isAnswerVisible) return;
+
     const interval = setInterval(() => {
       setIsAnimating(true);
       
@@ -34,7 +38,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [placeholderIndex]);
+  }, [placeholderIndex, isAnswerVisible]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,6 +57,14 @@ const SearchInput: React.FC<SearchInputProps> = ({
     setTimeout(() => {
       setCurrentAnswer(null);
     }, 300);
+  };
+
+  const handleNextQuestion = () => {
+    const nextIndex = (placeholderIndex + 1) % questionAnswers.length;
+    const nextQuestionAnswer = questionAnswers[nextIndex];
+    setCurrentAnswer(nextQuestionAnswer);
+    setPlaceholderIndex(nextIndex);
+    setCurrentPlaceholder(nextQuestionAnswer.question);
   };
 
   return (
@@ -92,6 +104,12 @@ const SearchInput: React.FC<SearchInputProps> = ({
             </div>
             <div className="search-answer-question">{currentAnswer.question}</div>
             <div className="search-answer-text">{currentAnswer.answer}</div>
+            <div className="search-answer-footer">
+              <button className="search-answer-next" onClick={handleNextQuestion}>
+                <span className="search-answer-next-text">Next: {questionAnswers[(placeholderIndex + 1) % questionAnswers.length].question}</span>
+                <ArrowForwardIcon className="search-answer-next-arrow" sx={{ fontSize: 16 }} />
+              </button>
+            </div>
           </div>
         </div>
       )}

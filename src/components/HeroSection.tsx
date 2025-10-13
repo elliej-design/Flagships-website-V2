@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
             <Logo />
           </div>
           <h1 className="hero-tagline animate-fade-in-up animate-delay-2">
-            The new infrastructure for private market communication
+            Infrastructure for private market communication
           </h1>
         </div>
         
