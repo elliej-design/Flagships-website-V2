@@ -50,9 +50,9 @@ const HeroSection: React.FC = () => {
             onSearch={handleSearch}
             onShowAnswer={handleShowAnswer}
           />
-          <div className="animate-fade-in-up animate-delay-4">
+          {/* <div className="animate-fade-in-up animate-delay-4">
             <ExampleQuestions onQuestionClick={handleQuestionClick} />
-          </div>
+          </div> */}
         </div>
       </div>
       

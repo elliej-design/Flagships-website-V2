@@ -36,10 +36,6 @@ const ResearchSection: React.FC<ResearchSectionProps> = ({ onNavigate }) => {
       <div className="research-container">
         <div className="research-header">
           <h2 className="research-title">About Flagships</h2>
-          <button className="view-all-link">
-            <span className="view-all-text">View all</span>
-            <ArrowForwardIcon className="view-all-arrow" />
-          </button>
         </div>
         
         <div className="research-grid">
