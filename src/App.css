@@ -703,6 +703,7 @@
   padding: 2rem 0;
   background: transparent;
   margin-left: 192px;
+  margin-right: 192px;
   min-height: 100vh;
 }
 
@@ -855,12 +856,13 @@
 @media (max-width: 768px) {
   .article-page {
     margin-left: 0;
+    margin-right: 0;
     padding: 1rem 0;
   }
   
   .article-container {
     padding: 0 16px;
-    margin-left: 0;
+    margin: 0 auto;
   }
   
   .article-title {
