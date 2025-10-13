@@ -4,18 +4,17 @@ import { questionAnswers, QuestionAnswer } from '../data/questionAnswers';
 interface SearchInputProps {
   placeholder?: string;
   onSearch?: (query: string) => void;
-  onShowAnswer?: (answer: QuestionAnswer) => void;
 }
 
 const SearchInput: React.FC<SearchInputProps> = ({ 
-  placeholder = "Example question", 
-  onSearch,
-  onShowAnswer
+  placeholder = "Example question"
 }) => {
   const [query, setQuery] = useState('');
   const [currentPlaceholder, setCurrentPlaceholder] = useState('');
   const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [currentAnswer, setCurrentAnswer] = useState<QuestionAnswer | null>(null);
+  const [isAnswerVisible, setIsAnswerVisible] = useState(false);
 
   const placeholderTexts = questionAnswers.map(qa => qa.question);
 
@@ -42,9 +41,18 @@ const SearchInput: React.FC<SearchInputProps> = ({
     
     // Since input is read-only, always show the answer for the current question
     const currentQuestionAnswer = questionAnswers[placeholderIndex];
-    if (onShowAnswer && currentQuestionAnswer) {
-      onShowAnswer(currentQuestionAnswer);
+    if (currentQuestionAnswer) {
+      setCurrentAnswer(currentQuestionAnswer);
+      setIsAnswerVisible(true);
     }
+  };
+
+  const handleCloseAnswer = () => {
+    setIsAnswerVisible(false);
+    // Delay clearing the answer to allow for exit animation
+    setTimeout(() => {
+      setCurrentAnswer(null);
+    }, 300);
   };
 
   return (
@@ -69,6 +77,24 @@ const SearchInput: React.FC<SearchInputProps> = ({
           </svg>
         </button>
       </form>
+      
+      {/* Answer Display */}
+      {currentAnswer && (
+        <div className={`search-answer ${isAnswerVisible ? 'visible' : ''}`}>
+          <div className="search-answer-content">
+            <div className="search-answer-header">
+              <div className="search-answer-category">{currentAnswer.category}</div>
+              <button className="search-answer-close" onClick={handleCloseAnswer}>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div className="search-answer-question">{currentAnswer.question}</div>
+            <div className="search-answer-text">{currentAnswer.answer}</div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
