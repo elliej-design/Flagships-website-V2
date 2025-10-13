@@ -26,11 +26,6 @@ const DictionaryPage: React.FC<DictionaryPageProps> = ({ onNavigate }) => {
     setSelectedLetter(selectedLetter === letter ? '' : letter);
   };
 
-  const handleBackClick = () => {
-    if (onNavigate) {
-      onNavigate('home');
-    }
-  };
 
   const availableLetters = getAvailableLetters();
   const filteredTerms = selectedLetter ? getTermsByLetter(selectedLetter) : dictionaryTerms;
@@ -39,13 +34,6 @@ const DictionaryPage: React.FC<DictionaryPageProps> = ({ onNavigate }) => {
     <div className="dictionary-page">
       <div className="dictionary-container">
         <div className="dictionary-content">
-          <button className="back-button" onClick={handleBackClick}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 12L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            Back to Home
-          </button>
-          
           <h1 className="dictionary-title">Flagships Dictionary</h1>
           <p className="dictionary-intro">
             Comprehensive definitions of financial and private market terminology. 
