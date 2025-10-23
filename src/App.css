@@ -1201,10 +1201,12 @@
   min-height: 100vh;
   background: transparent;
   padding-top: 80px;
+  margin-left: 192px;
+  margin-right: 192px;
 }
 
 .security-container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -1213,83 +1215,120 @@
   background: transparent;
 }
 
+/* Hero Section */
+.security-hero {
+  margin-bottom: 3rem;
+}
+
 .security-title {
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 600;
   color: #000000;
   line-height: 1.2;
   margin: 0 0 1.5rem 0;
+  letter-spacing: -0.01em;
 }
 
 .security-intro {
   font-size: 20px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.8);
-  margin: 0 0 3rem 0;
+  margin: 0 0 1.5rem 0;
   line-height: 1.6;
+  max-width: 800px;
 }
 
-.security-heading {
-  font-size: 32px;
+/* Section Titles */
+.security-section-title {
+  font-size: 24px;
   font-weight: 600;
   color: #000000;
-  margin: 3rem 0 1.5rem 0;
+  margin: 0 0 1rem 0;
   line-height: 1.3;
-  letter-spacing: -0.01em;
+}
+
+/* Security Principles */
+.security-principles {
+  margin-bottom: 3rem;
 }
 
 .security-paragraph {
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
   color: rgba(0, 0, 0, 0.8);
-  margin: 0 0 2rem 0;
-  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+  max-width: 800px;
 }
 
-.security-commitment {
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+/* Fact Sheet */
+.security-fact-sheet {
+  margin-bottom: 4rem;
 }
 
-.security-commitment-text {
-  font-size: 20px;
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.fact-item {
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.fact-category {
+  font-size: 14px;
   font-weight: 600;
   color: #000000;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.4;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fact-description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+/* Commitment Section */
+.security-commitment {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive styles for security page */
 @media (max-width: 768px) {
   .security-page {
     padding-top: 60px;
+    margin-left: 0;
+    margin-right: 0;
   }
   
   .security-container {
     padding: 0 16px;
-    margin-left: 0;
   }
   
   .security-title {
-    font-size: 32px;
+    font-size: 28px;
   }
   
   .security-intro {
     font-size: 18px;
   }
   
-  .security-heading {
-    font-size: 28px;
+  .security-section-title {
+    font-size: 20px;
   }
   
   .security-paragraph {
     font-size: 16px;
   }
   
-  .security-commitment-text {
-    font-size: 18px;
-  }
 }
 
 /* Research Section Styles */
